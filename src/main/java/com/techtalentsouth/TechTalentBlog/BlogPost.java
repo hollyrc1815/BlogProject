@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 public class BlogPost {
 
@@ -22,7 +24,7 @@ public class BlogPost {
 	@Size(max=255)
 	private String author;
 	
-	@Size(max=255)
+	@Type(type="text")
 	private String blogEntry;
 	
 	public BlogPost() {
