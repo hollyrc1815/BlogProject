@@ -1,0 +1,10 @@
+---
+applications:
+- name: TechTalentBlog
+  memory: 1M
+  random-route: true
+  path: ../\\HOLLY\Users\holly\Documents\workspace-sts-3.9.8.RELEASE\TechTalentBlog
+  env:
+    SPRING_PROFILES_ACTIVE: cloud,mysql
+  services:
+  - spring-bootstrap-db

@@ -2,7 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Create a New Blog</title>
-   		<div th:replace="/fragments/styling :: head-style" ></div>
+   		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../../css/standard.css" rel="stylesheet">
 </head>
 	<body>
 	<div th:replace="fragments/navbar :: navbar" ></div>
@@ -21,7 +23,7 @@
  		</div>
  		
  		<div class="form-group">
- 			<input type="text" class ="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />
+ 			<textarea type="text" class ="form-control" placeholder="Blog Entry" maxlength="255"  rows="4"  th:field="*{blogEntry}" />
  		</div>
 
  		<button class="btn btn-primary">Submit Your Post</button>

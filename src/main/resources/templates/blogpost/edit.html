@@ -2,30 +2,39 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>Create a New Blog</title>
-   		<div th:replace="/fragments/styling :: head-style" ></div>
+   		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link href="../../webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../../css/standard.css" rel="stylesheet">
 </head>
 	<body>
 	<div th:replace="fragments/navbar :: navbar" ></div>
         <div class="container">
-			<h1>Create a New Blog Post!!!!!!!!!!!!!!</h1>
+			<h1>Edit Your Blog Post!!!!!!!!!!!!!!</h1>
 			<h3>Check out our blogs!</h3>
 		    <p>Please use the form below to submit a Blog Post:</p>
 		
-		 <form action="#" th:action="@{/}" th:object="${blogPost}" method="put" >
+		<form th:object="${blogpost}" th:action="@{'/blogpost/edit/{id}' (id=${id})}"  th:method="put" >
+			
 		<div class="form-group">
- 			<input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}" />
+			<label>Title</label>
+ 			<input type="text" class="form-control"  th:field="*{title}" />
  		</div>
  		
  		<div class="form-group">
- 			<input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}" />
+ 			<label>Author</label>
+ 			<input type="text" class="form-control"  th:field="*{author}" />
  		</div>
  		
  		<div class="form-group">
- 			<input type="text" class ="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />
+ 			<label>BlogEntry</label>
+ 			<input type="text" class ="form-control" textarea rows="4" cols="50" th:field="*{blogEntry}" />
  		</div>
-
- 		<button class="btn btn-primary">Update Your Post</button>
-</form>
+ 		
+ 		<button type="submit" class="btn btn-primary">Update Your Post</button> 	
+ 		
+ 		</form>
+ 		
+ 		
 
 </div>
 
