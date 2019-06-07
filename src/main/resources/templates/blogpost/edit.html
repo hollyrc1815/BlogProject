@@ -10,8 +10,8 @@
 	<div th:replace="fragments/navbar :: navbar" ></div>
         <div class="container">
 			<h1>Edit Your Blog Post!!!!!!!!!!!!!!</h1>
-			<h3>Check out our blogs!</h3>
-		    <p>Please use the form below to submit a Blog Post:</p>
+			
+		    <p>Please use the form below to edit a Blog Post:</p>
 		
 		<form th:object="${blogpost}" th:action="@{'/blogpost/edit/{id}' (id=${id})}"  th:method="put" >
 			
@@ -38,6 +38,7 @@
 
 </div>
 
-<div th:replace="/fragments/styling :: body-links" ></div>
+<script src="../../webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../../webjars/jquery/1.9.1/jquery.min.js"></script>
 </body>
 </html>
